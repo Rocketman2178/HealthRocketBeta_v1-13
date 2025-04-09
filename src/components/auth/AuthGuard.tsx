@@ -9,7 +9,7 @@ export function AuthGuard({ children }: { children: React.ReactNode }) {
   const { userData, userLoading } = useUser(user?.id);
 
   useEffect(() => {
-    if (user && window.ReactNativeWebView) {
+    if (window.ReactNativeWebView) {
       window.ReactNativeWebView.postMessage(JSON.stringify(user));
     }
   }, [user]);
